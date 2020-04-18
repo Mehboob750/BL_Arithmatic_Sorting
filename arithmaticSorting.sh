@@ -41,3 +41,18 @@ do
         done
 done
 echo " Computational Result in Descending Order:" ${result[@]};
+
+
+for (( iteration=0; iteration<limit; iteration++ ))
+do
+        for (( iteration1=iteration+1; iteration1<limit; iteration1++ ))
+        do
+                if (( ${result[iteration]} > ${result[iteration1]} ))
+                then
+                        temp=${result[iteration]};
+                        result[((iteration))]=${result[iteration1]};
+                        result[((iteration1))]=$temp;
+                fi
+        done
+done
+echo " Computational Result in Ascending Order:" ${result[@]};
