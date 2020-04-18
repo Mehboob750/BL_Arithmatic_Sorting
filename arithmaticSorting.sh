@@ -4,4 +4,7 @@ operation1=$(($num1+$num2*$num3));
 echo $operation1;
 operation2=$(($num1*$num2+$num3));
 echo $operation2;
-
+operation3=$(($num3+$num1/$num2));
+echo $operation3;
+operation4=$(($num1%$num2+$num3));
+echo $operation4;
