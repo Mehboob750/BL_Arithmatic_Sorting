@@ -1,7 +1,7 @@
 #!/bin/bash -x
 declare -A dictionary
 declare -a result
-
+#Taking inputs from user and performing arithmatic operations
 read -p "Enter the three inputs: " num1 num2 num3;
 operation1=$(($num1+$num2*$num3));
 echo $operation1;
@@ -20,6 +20,7 @@ echo $operation4;
 dictionary[operation4]="$operation4";
 echo ${dictionary[@]};
 
+#Read values from dictionary to array
 for iteration in "${dictionary[@]}"
 do
 	result[((iteration1++))]=$iteration;
@@ -28,6 +29,7 @@ done
 echo  ${result[@]};
 limit=${#result[@]};
 
+#Sort the computational result in decending order
 for (( iteration=0; iteration<limit; iteration++ ))
 do
         for (( iteration1=iteration+1; iteration1<limit; iteration1++ ))
@@ -42,7 +44,7 @@ do
 done
 echo " Computational Result in Descending Order:" ${result[@]};
 
-
+#Sort the computational result in Ascending order
 for (( iteration=0; iteration<limit; iteration++ ))
 do
         for (( iteration1=iteration+1; iteration1<limit; iteration1++ ))
