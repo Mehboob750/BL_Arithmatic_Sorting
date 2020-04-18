@@ -19,9 +19,11 @@ echo $operation4;
 dictionary[operation4]="$operation4";
 
 echo ${dictionary[@]};
+limit=${#dictionary[@]};
 
-resultInArray[((counter++))]=${dictionary[operation1]};
-resultInArray[((counter++))]=${dictionary[operation2]};
-resultInArray[((counter++))]=${dictionary[operation3]};
-resultInArray[((counter++))]=${dictionary[operation4]};
+for iteration in "${dictionary[@]}"
+do
+	result[((iteration1++))]=$iteration;
+done
 
+echo  ${result[@]};
