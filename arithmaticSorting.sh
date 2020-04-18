@@ -1,4 +1,6 @@
 #!/bin/bash -x
+declare -A dictionary
+counter=1;
 read -p "Enter the three inputs: " num1 num2 num3;
 operation1=$(($num1+$num2*$num3));
 echo $operation1;
@@ -17,3 +19,9 @@ echo $operation4;
 dictionary[operation4]="$operation4";
 
 echo ${dictionary[@]};
+
+resultInArray[((counter++))]=${dictionary[operation1]};
+resultInArray[((counter++))]=${dictionary[operation2]};
+resultInArray[((counter++))]=${dictionary[operation3]};
+resultInArray[((counter++))]=${dictionary[operation4]};
+
